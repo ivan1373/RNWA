@@ -1,9 +1,11 @@
 <?php include("config.php");?>
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <?php
   include_once('head.php');
   ?>
+<link rel="stylesheet" type="text/css" href="style.css" />
 <body>
 <script>
 $(document).ready(function(){
@@ -20,7 +22,7 @@ $(document).ready(function(){
    }
   });
  }
- $('#filter').click(function(){
+ $("input[name=fname],input[name=lname]").click(function(){
   var nameVal = $('#fname').val();
   var LnameVal = $('#lname').val();
   if(nameVal != '' && LnameVal == '')

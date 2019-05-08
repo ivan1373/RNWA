@@ -26,18 +26,20 @@ $result = mysqli_query($conn, $query);
 if(mysqli_num_rows($result) > 0)
 {
     $output .= '
+    <thead>
    <tr>
      <th>ID</th>
      <th>City Name</th>
      <th>Country</th>
-    </tr>';
+    </tr>
+    </thead>';
  while($row1 = mysqli_fetch_array($result))
  {
   $output .= '
   <tr>
-    <td>'.$row1["city_id"].'</td>
-    <td>'.$row1["city"].'</td>
-    <td>'.$row1["country"].'</td>
+    <td data-label='.'ID'.'>'.$row1["city_id"].'</td>
+    <td data-label='.'City'.'>'.$row1["city"].'</td>
+    <td data-label='.'Country'.'>'.$row1["country"].'</td>
    </tr>
   ';
  }

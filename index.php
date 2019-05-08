@@ -1,9 +1,11 @@
 ﻿<?php include("config.php");?>
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <?php
   include_once('head.php');
   ?>
+<link rel="stylesheet" type="text/css" href="style.css" />
 <body>
         <?php
             require('navbar.php');

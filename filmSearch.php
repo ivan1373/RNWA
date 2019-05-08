@@ -3,9 +3,12 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <?php
   include_once('head.php');
   ?>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>  
 <body>
 <script>
 $(document).ready(function(){
@@ -22,7 +25,7 @@ $(document).ready(function(){
    }
   });
  }
- $('#filter').click(function(){
+ $("input[name=name],#kategorija,#ocjena").change(function(){
   var nameVal = $('#naziv').val();
   var katVal = $('#kategorija').val();
   var ocjenaVal = $('#ocjena').val();

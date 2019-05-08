@@ -34,20 +34,22 @@ $result = mysqli_query($conn, $query);
 if(mysqli_num_rows($result) > 0)
 {
     $output .= '
+    <thead>
    <tr>
      <th>ActorID</th>
      <th>First Name</th>
      <th>Last Name</th>
      <th>Films</th>
-    </tr>';
+    </tr>
+    </thead>';
  while($row1 = mysqli_fetch_array($result))
  {
   $output .= '
   <tr>
-    <td>'.$row1["actor_id"].'</td>
-    <td>'.$row1["first_name"].'</td>
-    <td>'.$row1["last_name"].'</td>
-    <td>'.$row1["film_info"].'</td>
+    <td data-label='.'ID'.'>'.$row1["actor_id"].'</td>
+    <td data-label='.'First Name'.'>'.$row1["first_name"].'</td>
+    <td data-label='.'Last Name'.'>'.$row1["last_name"].'</td>
+    <td data-label='.'Films'.'>'.$row1["film_info"].'</td>
    </tr>
   ';
  }

@@ -3,9 +3,11 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<head>
 <?php
   include_once('head.php');
   ?>
+<link rel="stylesheet" type="text/css" href="style.css" />
 <body>
 <script>
 $(document).ready(function(){
@@ -22,7 +24,7 @@ $(document).ready(function(){
    }
   });
  }
- $('#filter').click(function(){
+ $("input[name=name],#drzava").click(function(){
   var nazivVal = $('#naziv').val();
   var drzavaVal = $('#drzava').val();
   if(nazivVal != '')
