@@ -25,32 +25,38 @@
                 <br><br>
         </form>
         <table id="result">
+        <thead>
+        <tr>
+			  <th>Title</th>
+			  <th>Description</th>
+			  <th>Category</th>
+		  	<th>Price</th>
+		  	<th>Length</th>
+		  	<th>Rating</th>
+		  	<th>First Name</th>
+	  		<th>Last Name</th>
+	  		</tr>
+              </thead>
+             <tbody> 
         <?php
 
 try{
 	ini_set('soap.wsdl_cache_enabled',0);
 	ini_set('soap.wsdl_cache_ttl',0);
   //$sClient = new SoapClient('http://localhost/test/wsdl/hello.xml,);
-  $sClient = new SoapClient('http://localhost/rnwa/servisi/film.wsdl',
-  array(
-    'cache_wsdl'=>WSDL_CACHE_NONE,
-    'trace'=>1,
-    'user' => 'root',
-    'pass' => '',
-    'exceptions' => 0
-  )
+  $sClient = new SoapClient('http://localhost/rnwa/servisi/film.wsdl'
 							);
   //$sClient = new SoapClient('hello.wsdl');
   if(isset($_REQUEST['name']))
   {
-    $filmName = $_REQUEST['name'];
-  $response = $sClient->findActors($filmName);
+    $film = $_REQUEST['name'];
+  $response = $sClient->findActors($film);
   print($response);
   //echo $filmName;
   //return $response;
   //var_dump($x->__getLastResponseHeaders());
 	//var_dump($sClient->__getLastResponse());
-$sClient->__getLastResponse();
+//$sClient->__getLastResponse();
   //var_dump($response);
   //$functions = $sClient->__getFunctions ();
 //var_dump ($functions);
@@ -67,7 +73,7 @@ $sClient->__getLastResponse();
     print($sClient->__getLastResponse());
 }
 ?>
-          
+          </tbody>
           </table>
         </div>
         </div>

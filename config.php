@@ -19,10 +19,26 @@
 			$CURRENT_PAGE = "WSDL servis"; 
 			$PAGE_TITLE = "Unesite naziv filma";
 			break;
-		case "/rnwa/servisi/bezWSDL.php":
+		case "/rnwa/servisi/bezWsdl.php":
 			$CURRENT_PAGE = "Bez WSDL"; 
-			$PAGE_TITLE = "Unesite naziv filma";
+			$PAGE_TITLE = "Unesite kategoriju i broj";
 			break;
+        case "/rnwa/rest/create.php":
+            $CURRENT_PAGE = "Rest";
+            $PAGE_TITLE = "REST API";
+            break;
+        case "/rnwa/rest/read.php":
+            $CURRENT_PAGE = "Rest";
+            $PAGE_TITLE = "REST API";
+            break;
+        case "/rnwa/rest/update.php":
+            $CURRENT_PAGE = "Rest";
+            $PAGE_TITLE = "REST API";
+            break;
+        case "/rnwa/rest/delete.php":
+            $CURRENT_PAGE = "Rest";
+            $PAGE_TITLE = "REST API";
+            break;
 		default:
 			$CURRENT_PAGE = "Index";
 			$PAGE_TITLE = "Ivan Miloš RNWA2019";
