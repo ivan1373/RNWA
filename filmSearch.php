@@ -6,10 +6,12 @@
 <head>
 <?php
   include_once('head.php');
+include_once('google_oauth_config.php');
   ?>
 <link rel="stylesheet" type="text/css" href="style.css" />
 </head>  
 <body>
+
 <script>
 $(document).ready(function(){
  //load_data();
@@ -45,10 +47,19 @@ $(document).ready(function(){
  });
 });
 </script>
-        <?php
-            require('navbar.php');
-            require('menu.php');
-        ?>
+<?php
+require('navbar.php');
+require('menu.php');
+?>
+<?php if (isset($authUrl)): ?>
+    <h3>You are not allowed to se the content</h3>
+    <form action="<?php echo $authUrl; ?>" method="post">
+        <button style="border: none;outline: 0;padding: 8px;color: white;background-color: #000;text-align: center;cursor: pointer;font-size: 18px;" type="submit">
+            Login with Google
+        </button>
+    </form>
+<?php else: ?>
+
         <div class="row">
         <div class="col-6 col-s-9">
               <label>Pretražite filmove po imenu</label><br>
@@ -99,6 +110,6 @@ $(document).ready(function(){
         <?php
             require('footer.php');
         ?>
-    
+<?php endif ?>
 </body>
 </html>
